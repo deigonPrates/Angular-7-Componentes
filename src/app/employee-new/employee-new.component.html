@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+      <div class="form-inline">
+        <label>Nome:</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.name">
+
+        <label>Salário</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.salary">
+
+        <div class="form-group" [hidden]="employee.salary > 1000">
+          <label>Bonus</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.bonus">
+        </div>
+        <button class="btn btn-primary btn-sm form-control" type="button" (click)="addEmployee()">Adicionar</button>
+      </div>
+  </div>
+</div>

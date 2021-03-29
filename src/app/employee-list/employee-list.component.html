@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Salário</th>
+          <th scope="col">Bonus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeeService.employee">
+          <th scope="row">{{ i }}</th>
+          <td>{{ employee.name }}</td>
+          <td  [class]="getColorEmployee(employee)">{{ employee.salary }}</td>
+          <td>{{ employee.bonus }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
