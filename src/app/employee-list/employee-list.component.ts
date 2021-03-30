@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { EmployeeNewModalComponent } from '../employee-new-modal/employee-new-modal.component';
 import { EmployeeService } from '../employee.service';
 
 @Component({
@@ -8,7 +9,16 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor(public employeeService:EmployeeService) { }
+  @ViewChild(EmployeeNewModalComponent)
+  employeeNewModalComponent:EmployeeNewModalComponent;
+
+  constructor(public employeeService:EmployeeService) {
+    console.log(this.employeeNewModalComponent);
+    setTimeout(() =>{
+      console.log(this.employeeNewModalComponent);
+      this.employeeNewModalComponent.show();
+    }, 2000);
+   }
 
   ngOnInit(): void {
   }
