@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+    <p [hidden]="!showMessageSuccess">
+      O empregado {{employee?.name}} foi cadastrado com sucesso!
+    </p>
     <h1>Lista de Empregados</h1>
     <table class="table table-striped">
       <thead>
@@ -27,4 +30,4 @@
   </div>
 </div>
 
-<employee-new-modal></employee-new-modal>
+<employee-new-modal (Onsubmit)="onNewEmployee($event)"></employee-new-modal>
