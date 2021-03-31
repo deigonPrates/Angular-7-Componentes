@@ -14,6 +14,7 @@
           <th scope="col">Nome</th>
           <th scope="col">Salário</th>
           <th scope="col">Bonus</th>
+          <th scope="col">Ação</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,9 @@
           <td>{{ employee.name }}</td>
           <td  [class]="getColorEmployee(employee)">{{ employee.salary }}</td>
           <td>{{ employee.bonus }}</td>
+          <td>
+            <a href="javascript:void(0)" (click)="showEditModal(employee)">Abrir</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -29,3 +33,4 @@
 </div>
 
 <employee-new-modal (Onsubmit)="onNewEmployee($event)"></employee-new-modal>
+<employee-edit-modal [employee]="employeeEdit" (Onsubmit)="onEditEmployee($event)"></employee-edit-modal>

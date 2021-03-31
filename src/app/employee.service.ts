@@ -11,7 +11,19 @@ export interface Employee{
 })
 export class EmployeeService {
 
-  employee:Employee[] = [];
+  employee:Employee[] = [
+    {
+      'name': 'Deigon Prates',
+      'salary': 1000,
+      'bonus': 0
+    },
+    {
+      'name': 'Cimara',
+      'salary': 2000,
+      'bonus': 0
+    },
+  ];
+
   constructor() { }
 
   addEmployeeService(employee){
