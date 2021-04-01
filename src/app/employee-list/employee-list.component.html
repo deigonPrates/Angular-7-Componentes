@@ -20,9 +20,9 @@
       <tbody>
         <tr *ngFor="let employee of employeeService.employee">
           <th scope="row">{{ i }}</th>
-          <td>{{ employee.name }}</td>
-          <td [salaryColor]="employee.salary" >{{ employee.salary }}</td>
-          <td>{{ employee.bonus }}</td>
+          <td>{{ employee.name | uppercase}}</td>
+          <td [salaryColor]="employee.salary" >{{ employee.salary  | myMoney}}</td>
+          <td>{{ employee.bonus | myMoney}}</td>
           <td>
             <div class="col-md-5 d-flex justify-content-between">
               <a href="javascript:void(0)" (click)="showEditModal(employee)" class="btn btn-warning btn-sm">Editar</a>

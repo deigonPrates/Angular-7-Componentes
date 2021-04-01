@@ -12,7 +12,7 @@ export class SalaryColorDirective {
   set salaryColor(value){
     const nativeElement:HTMLElement = this.element.nativeElement;
     const salary = parseFloat(value);
-    nativeElement.style.color = salary > 20000 ? 'green' : 'red';
+    nativeElement.style.color = salary > 2000 ? 'green' : 'red';
   }
 
 }
