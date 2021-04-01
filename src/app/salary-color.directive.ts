@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[salaryColor]'
@@ -6,7 +6,13 @@ import { Directive, ElementRef } from '@angular/core';
 export class SalaryColorDirective {
 
   constructor(private element:ElementRef) {
-    this.element.nativeElement.innerHTML = 'Teste';
+  }
+
+  @Input()
+  set salaryColor(value){
+    const nativeElement:HTMLElement = this.element.nativeElement;
+    const salary = parseFloat(value);
+    nativeElement.style.color = salary > 20000 ? 'green' : 'red';
   }
 
 }

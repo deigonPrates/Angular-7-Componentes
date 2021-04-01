@@ -21,7 +21,7 @@
         <tr *ngFor="let employee of employeeService.employee">
           <th scope="row">{{ i }}</th>
           <td>{{ employee.name }}</td>
-          <td  [class]="getColorEmployee(employee)">{{ employee.salary }}</td>
+          <td [salaryColor]="employee.salary" >{{ employee.salary }}</td>
           <td>{{ employee.bonus }}</td>
           <td>
             <div class="col-md-5 d-flex justify-content-between">
