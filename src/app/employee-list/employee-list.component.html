@@ -24,8 +24,10 @@
           <td  [class]="getColorEmployee(employee)">{{ employee.salary }}</td>
           <td>{{ employee.bonus }}</td>
           <td>
-            <a href="javascript:void(0)" (click)="showEditModal(employee)">Abrir</a> |
-            <a href="javascript:void(0)" (click)="showDeleteModal(employee)">Remover</a>
+            <div class="col-md-5 d-flex justify-content-between">
+              <a href="javascript:void(0)" (click)="showEditModal(employee)" class="btn btn-warning btn-sm">Editar</a>
+            <a href="javascript:void(0)" (click)="showDeleteModal(employee)" class="btn btn-danger btn-sm">Remover</a>
+            </div>
           </td>
         </tr>
       </tbody>
