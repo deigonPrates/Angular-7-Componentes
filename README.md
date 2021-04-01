@@ -1,3 +1,6 @@
+![alt text](https://github.com/deigonPrates/Angular-7-Componentes/blob/main/test/app.png?raw=true)
+
+
 # AngularComponentes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
