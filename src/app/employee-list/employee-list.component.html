@@ -24,7 +24,8 @@
           <td  [class]="getColorEmployee(employee)">{{ employee.salary }}</td>
           <td>{{ employee.bonus }}</td>
           <td>
-            <a href="javascript:void(0)" (click)="showEditModal(employee)">Abrir</a>
+            <a href="javascript:void(0)" (click)="showEditModal(employee)">Abrir</a> |
+            <a href="javascript:void(0)" (click)="showDeleteModal(employee)">Remover</a>
           </td>
         </tr>
       </tbody>
@@ -34,3 +35,4 @@
 
 <employee-new-modal (Onsubmit)="onNewEmployee($event)"></employee-new-modal>
 <employee-edit-modal [employee]="employeeEdit" (Onsubmit)="onEditEmployee($event)"></employee-edit-modal>
+<employee-delete-modal [employee]="employeeDelete" (OnDelete)="onDeleteEmployee($event)"></employee-delete-modal>
