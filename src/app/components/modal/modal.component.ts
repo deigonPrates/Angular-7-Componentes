@@ -27,6 +27,7 @@ export class ModalComponent implements OnInit {
   constructor(private element:ElementRef) { }
 
   ngOnInit(): void {
+    console.log(this.element.nativeElement);
   }
 
   hide(){
