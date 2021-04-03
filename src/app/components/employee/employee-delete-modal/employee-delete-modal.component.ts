@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Employee, EmployeeService } from '../../../services/employee.service';
-import { ModalComponent } from '../../modal/modal.component';
+import { Modalable } from '../../modal/modalable';
 
 declare const $;
 
@@ -9,7 +9,7 @@ declare const $;
   templateUrl: './employee-delete-modal.component.html',
   styleUrls: ['./employee-delete-modal.component.css']
 })
-export class EmployeeDeleteModalComponent implements OnInit {
+export class EmployeeDeleteModalComponent extends Modalable implements OnInit {
 
   @Input()
   employee:Employee;
@@ -18,10 +18,9 @@ export class EmployeeDeleteModalComponent implements OnInit {
   @Output()
   OnDelete: EventEmitter<Employee> =  new EventEmitter<Employee>();
 
-  @ViewChild(ModalComponent)
-  modalComponent:ModalComponent
-
-  constructor(private element:ElementRef, private employeeService:EmployeeService) { }
+  constructor(private employeeService:EmployeeService) {
+    super();
+  }
 
   ngOnInit(): void {
   }
@@ -31,14 +30,6 @@ export class EmployeeDeleteModalComponent implements OnInit {
     this.employeeService.destroy(employee);
     this.OnDelete.emit(copy);
     this.hide();
-  }
-
-  hide(){
-    this.modalComponent.hide();
-  }
-
-  show(){
-    this.modalComponent.show();
   }
 
 }
