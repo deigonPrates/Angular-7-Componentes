@@ -34,4 +34,12 @@ export class EmployeeNewModalComponent extends Modalable implements OnInit {
     this.hide();
   }
 
+  fechou(e){
+    console.log(e);
+  }
+
+  mostrou(e){
+    console.log(e);
+  }
+
 }
