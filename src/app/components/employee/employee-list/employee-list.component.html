@@ -1,5 +1,5 @@
 <div class="container">
-  <alert-success [hidden]="!showMessageSuccess">O empregado <strong>{{employee?.name}}</strong> foi cadastrado com sucesso!</alert-success>
+  <!-- <alert-success [hidden]="!showMessageSuccess">O empregado <strong>{{employee?.name}}</strong> foi cadastrado com sucesso!</alert-success> -->
   <div class="row">
     <h1>Lista de Empregados</h1>
     <table class="table table-striped">
@@ -34,7 +34,7 @@
     </table>
   </div>
 </div>
-
+<toast></toast>
 <employee-new-modal (Onsubmit)="onNewEmployee($event)"></employee-new-modal>
 <employee-edit-modal [employee]="employeeEdit" (Onsubmit)="onEditEmployee($event)"></employee-edit-modal>
 <employee-delete-modal [employee]="employeeDelete" (OnDelete)="onDeleteEmployee($event)"></employee-delete-modal>
